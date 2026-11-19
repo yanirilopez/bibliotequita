@@ -20,7 +20,7 @@ CSS y JavaScript, y lo publiqué en AwardSpace.
 - AwardSpace para alojar la página y la base de datos
 - phpMyAdmin para crear la tabla
 - Git y GitHub para guardar y subir mis archivos
-  
+
 
 ## Archivos que creé
 
@@ -119,3 +119,15 @@ Con el style le di formato a la página entera para que tenga una buena presenta
 
 Este archivo revisa el formulario antes de enviarlo y avisa cuando el libro se
 guardó bien.
+
+
+## Paso 5: Probar que todo funciona
+
+1. Abrí mi página y revisé que aparecieran los dos libros del Paso 3.
+2. Registré un libro nuevo con el formulario.
+3. Presioné el botón **Prestar** y el estado cambió a Prestado.
+4. Presioné **Devolver** y volvió a Disponible.
+   
+<img width="1179" height="616" alt="image" src="https://github.com/user-attachments/assets/e2126b8b-b97a-45b3-844c-1a380bacf98b" />
+
+
