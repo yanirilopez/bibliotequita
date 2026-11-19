@@ -48,6 +48,22 @@ Biblioteca/
 
 1. Entré a mi cuenta de AwardSpace.
 2. Abrí el apartado **Database Manager**.
-3. ya tenia creada una base de datos, asi que solo agregue una tabla que se llama **libros**
+3.Creé una base de datos nueva
 4. Anoté los cuatro datos que me dieron: servidor, usuario, contraseña y nombre
    de la base de datos. Los necesité más adelante para conectar mis archivos PHP.
+
+ ### Paso 2: Crear la tabla
+
+
+Abrí **phpMyAdmin**, elegí mi base de datos, entré a la pestaña **SQL** y
+ejecuté este código para crear la tabla `libros`:
+
+```sql
+CREATE TABLE libros (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    titulo VARCHAR(150) NOT NULL,
+    autor VARCHAR(100) NOT NULL,
+    isbn VARCHAR(20) NOT NULL,
+    disponible INT DEFAULT 1
+);
+```
