@@ -48,11 +48,11 @@ Biblioteca/
 
 1. Entré a mi cuenta de AwardSpace.
 2. Abrí el apartado **Database Manager**.
-3.Creé una base de datos nueva
+3. Creé una base de datos nueva
 4. Anoté los cuatro datos que me dieron: servidor, usuario, contraseña y nombre
    de la base de datos. Los necesité más adelante para conectar mis archivos PHP.
 
- ### Paso 2: Crear la tabla
+### Paso 2: Crear la tabla
 
 
 Abrí **phpMyAdmin**, elegí mi base de datos, entré a la pestaña **SQL** y
@@ -85,4 +85,21 @@ Luego ejecuté esta consulta para comprobar que se guardaron:
 
 ```sql
 SELECT * FROM libros;
+```
+
+## Paso 4: Escribir el código de cada archivo
+
+En todos los archivos PHP tuve que cambiar los datos de conexión por los que me
+dio AwardSpace: servidor, usuario, contraseña y nombre de la base de datos.
+ ```php
+<?php
+// Cambia estos datos con los que te proporcione AwardSpace en tu "DatabaseManager"
+$host = "fdb1029.awardspace.net"; // Reemplaza XX por el número de tu servidor
+$usuario = "4794847_pruebadb";
+$password = "cherami64";
+$base_datos = "4794847_pruebadb";
+$conexion = new mysqli($host, $usuario, $password, $base_datos);
+if ($conexion->connect_error) {
+  die("Error de conexión: " . $conexion->connect_error);
+}
 ```
