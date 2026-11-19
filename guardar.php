@@ -8,14 +8,12 @@
  *
  * Se ejecuta cuando el usuario presiona el botón "Guardar Libro".
  *
- * @package SistemaControlBiblioteca
  * @author  Liz Yaniri Lopez Martinez
  *
- * @method  POST
- * @param   string $_POST['titulo'] Título del libro
- * @param   string $_POST['autor']  Autor del libro
- * @param   string $_POST['isbn']   Código ISBN del libro
- * @return  void Redirige a index.php; no devuelve ningún valor
+ * @param string $_POST['titulo'] Título del libro
+ * @param string $_POST['autor']  Autor del libro
+ * @param string $_POST['isbn']   Código ISBN del libro
+ * @return void Redirige a index.php; no devuelve ningún valor
  */
 
 /**
@@ -25,11 +23,8 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     /**
      * Datos de conexión a la base de datos MySQL de AwardSpace.
-     *
-     * @var string $host      Servidor de la base de datos
-     * @var string $usuario   Usuario de la base de datos
-     * @var string $password  Contraseña de la base de datos
-     * @var string $baseDatos Nombre de la base de datos
+     * $host es el servidor, $usuario y $password son las credenciales y
+     * $baseDatos es el nombre de la base de datos.
      */
     $host = "fdb1029.awardspace.net"; // Mismos datos de conexión
     $usuario = "4794847_pruebadb";
@@ -38,8 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     /**
      * Conexión a la base de datos usando la extensión MySQLi.
-     *
-     * @var mysqli $conexion Objeto de conexión con MySQL
+     * $conexion es el objeto de conexión con MySQL.
      */
     $conexion = new mysqli($host, $usuario, $password, $baseDatos);
 
@@ -52,11 +46,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     /**
      * Se limpian los datos recibidos con real_escape_string() para evitar
-     * inyecciones SQL básicas.
-     *
-     * @var string $titulo Título del libro, ya limpio
-     * @var string $autor  Autor del libro, ya limpio
-     * @var string $isbn   ISBN del libro, ya limpio
+     * inyecciones SQL básicas. $titulo, $autor e $isbn guardan los datos
+     * del libro ya limpios.
      */
     // Limpiar variables para evitar inyecciones SQL básicas
     $titulo = $conexion->real_escape_string($_POST['titulo']);
@@ -65,8 +56,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     /**
      * Consulta SQL que inserta el nuevo libro en la tabla "libros".
-     *
-     * @var string $sql Sentencia INSERT a ejecutar
      */
     $sql = "INSERT INTO libros (titulo, autor, isbn) "
         . "VALUES ('$titulo', '$autor', '$isbn')";
