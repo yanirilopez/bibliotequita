@@ -1,3 +1,21 @@
+/**
+ * Estilos del Sistema de Control de Biblioteca
+ *
+ * Define la apariencia de la página principal (index.php): el encabezado,
+ * el formulario "Registrar Nuevo Libro", la tabla "Inventario de Libros",
+ * las etiquetas de estado (Disponible / Prestado) y los botones de acción
+ * (Prestar / Devolver). También adapta el diseño a pantallas pequeñas.
+ *
+ * @author  Liz Yaniri Lopez Martinez
+ */
+
+/**
+ * Variables de color. Son los colores que se usan en toda la página:
+ * --primary-color es el azul oscuro del encabezado, --secondary-color el
+ * verde del botón, --background-color el fondo de la página,
+ * --card-background el fondo de las tarjetas y --text-color el color del
+ * texto.
+ */
 :root {
     --primary-color: #2c3e50;
     --secondary-color: #18bc9c;
@@ -6,6 +24,10 @@
     --text-color: #333333;
 }
 
+/**
+ * Cuerpo de la página. Define el tipo de letra, el color de fondo y el
+ * color de texto generales, y quita los márgenes por defecto del navegador.
+ */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: var(--background-color);
@@ -14,6 +36,10 @@ body {
     padding: 0;
 }
 
+/**
+ * Encabezado. Barra azul oscuro de arriba con el título "Sistema de Control
+ * de Biblioteca", centrado y con una sombra suave.
+ */
 header {
     background-color: var(--primary-color);
     color: white;
@@ -22,6 +48,11 @@ header {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/**
+ * Contenedor principal. Centra el contenido (máximo 1000px de ancho) y lo
+ * divide en dos columnas: la primera para el formulario y la segunda, el
+ * doble de ancha, para la tabla.
+ */
 .container {
     max-width: 1000px;
     margin: 2rem auto;
@@ -31,12 +62,21 @@ header {
     gap: 2rem;
 }
 
+/**
+ * Diseño para pantallas pequeñas. En pantallas de 768px de ancho o menos
+ * (celulares y tabletas), las dos columnas pasan a ser una sola: el
+ * formulario arriba y la tabla abajo.
+ */
 @media (max-width: 768px) {
     .container {
         grid-template-columns: 1fr;
     }
 }
 
+/**
+ * Tarjetas. Cuadros blancos con esquinas redondeadas y sombra ligera donde
+ * se muestran el formulario y la tabla.
+ */
 .card {
     background: var(--card-background);
     padding: 1.5rem;
@@ -44,16 +84,29 @@ header {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
+/**
+ * Grupos del formulario. Dan la separación entre cada campo del formulario
+ * (título, autor e ISBN).
+ */
 .form-group {
     margin-bottom: 1.2rem;
 }
 
+/**
+ * Etiquetas del formulario. Cada etiqueta ocupa su propia línea, encima de
+ * su campo, en negritas suaves.
+ */
 label {
     display: block;
     margin-bottom: 0.5rem;
     font-weight: 600;
 }
 
+/**
+ * Campos de texto. Son las cajas donde se escribe el título, el autor y el
+ * ISBN. Ocupan todo el ancho disponible y tienen borde gris con esquinas
+ * redondeadas.
+ */
 input[type="text"] {
     width: 100%;
     padding: 0.7rem;
@@ -62,6 +115,10 @@ input[type="text"] {
     box-sizing: border-box;
 }
 
+/**
+ * Botón "Guardar Libro". Es un botón verde de ancho completo que cambia de
+ * color suavemente cuando se pasa el cursor por encima (regla .btn:hover).
+ */
 .btn {
     background-color: var(--secondary-color);
     color: white;
@@ -75,16 +132,28 @@ input[type="text"] {
     transition: background 0.3s ease;
 }
 
+/**
+ * Botón "Guardar Libro" al pasar el cursor. Cambia a un verde más oscuro.
+ */
 .btn:hover {
     background-color: #128f76;
 }
 
+/**
+ * Tabla del inventario. Ocupa todo el ancho de su tarjeta y las celdas
+ * comparten bordes en lugar de tener espacios entre ellas.
+ */
 table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 1rem;
 }
 
+/**
+ * Celdas de la tabla. Les da espacio interno, alinea el texto a la
+ * izquierda y pone una línea gris debajo de cada fila. Aplica tanto a los
+ * encabezados (th) como a los datos (td).
+ */
 th,
 td {
     padding: 0.75rem;
@@ -92,10 +161,18 @@ td {
     border-bottom: 1px solid #ddd;
 }
 
+/**
+ * Encabezados de la tabla. Les da fondo gris claro a las columnas ID,
+ * Título, Autor, ISBN, Estado y Acción.
+ */
 th {
     background-color: #f2f2f2;
 }
 
+/**
+ * Etiqueta de estado. Es la forma base de la etiqueta que aparece en la
+ * columna "Estado". Los colores se definen en las dos reglas siguientes.
+ */
 .badge {
     padding: 0.25rem 0.5rem;
     border-radius: 4px;
@@ -103,16 +180,27 @@ th {
     font-weight: bold;
 }
 
+/**
+ * Etiqueta verde. Se muestra cuando el libro está disponible.
+ */
 .badge.dispo {
     background-color: #d4edda;
     color: #155724;
 }
 
+/**
+ * Etiqueta roja. Se muestra cuando el libro está prestado.
+ */
 .badge.prestado {
     background-color: #f8d7da;
     color: #721c24;
 }
 
+/**
+ * Botones de acción. Son la forma base de los botones de la columna
+ * "Acción" (Prestar / Devolver). El color de cada uno se define en las
+ * reglas siguientes.
+ */
 .btn-action {
     padding: 0.4rem 0.8rem;
     border: none;
@@ -126,22 +214,39 @@ th {
     min-width: 80px;
 }
 
+/**
+ * Botón azul "Prestar". Se muestra cuando el libro está disponible.
+ */
 .btn-prestar {
     background-color: #3498db;
 }
 
+/**
+ * Botón "Prestar" al pasar el cursor. Cambia a un azul más oscuro.
+ */
 .btn-prestar:hover {
     background-color: #2980b9;
 }
 
+/**
+ * Botón naranja "Devolver". Se muestra cuando el libro está prestado.
+ */
 .btn-devolver {
     background-color: #e67e22;
 }
 
+/**
+ * Botón "Devolver" al pasar el cursor. Cambia a un naranja más oscuro.
+ */
 .btn-devolver:hover {
     background-color: #d35400;
 }
 
+/**
+ * Tabla responsiva. Si la tabla es más ancha que la pantalla, aparece una
+ * barra de desplazamiento horizontal dentro de la tarjeta en lugar de
+ * salirse de la página.
+ */
 /* Ajuste opcional para la tabla responsiva */
 .table-container {
     overflow-x: auto;
