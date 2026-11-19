@@ -7,6 +7,7 @@ Algunos temas que vimos
 - Git add .
 - Git commit -m
 - Git push
+
 ## ¿De qué trata mi proyecto?
 
 Este proyecto es una página web para llevar el control de los libros de una
@@ -21,4 +22,15 @@ CSS y JavaScript, y lo publiqué en AwardSpace.
 - phpMyAdmin para crear la tabla
 - Git y GitHub para guardar y subir mis archivos
 
+## Archivos que creé
 
+Dentro de la carpeta de mi proyecto hice estos cinco archivos:
+
+```
+Biblioteca/
+├── index.php
+├── guardar.php
+├── cambiarEstado.php
+├── style.css
+└── script.js
+```
