@@ -34,3 +34,10 @@ Biblioteca/
 ├── style.css
 └── script.js
 ```
+| Archivo | Qué hace |
+| --- | --- |
+| index.php | Muestra el formulario y la tabla con los libros |
+| guardar.php | Guarda en la base de datos el libro que escribo en el formulario |
+| cambiarEstado.php | Cambia el libro entre Disponible y Prestado |
+| style.css | Le da color y orden a la página |
+| script.js | Revisa que no falten datos antes de guardar |
