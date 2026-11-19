@@ -71,7 +71,7 @@ CREATE TABLE libros (
 La columna `disponible` vale 1 cuando el libro está disponible y 0 cuando está
 prestado.
 
-## Paso 3: Agregar los dos primeros libros
+### Paso 3: Agregar los dos primeros libros
 
 Para tener datos con los que probar, en la misma pestaña SQL agregué dos libros:
 
@@ -87,7 +87,7 @@ Luego ejecuté esta consulta para comprobar que se guardaron:
 SELECT * FROM libros;
 ```
 
-## Paso 4: Escribir el código de cada archivo
+### Paso 4: Escribir el código de cada archivo
 
 En todos los archivos PHP tuve que cambiar los datos de conexión por los que me
 dio AwardSpace: servidor, usuario, contraseña y nombre de la base de datos.
@@ -121,7 +121,7 @@ Este archivo revisa el formulario antes de enviarlo y avisa cuando el libro se
 guardó bien.
 
 
-## Paso 5: Probar que todo funciona
+### Paso 5: Probar que todo funciona
 
 1. Abrí mi página y revisé que aparecieran los dos libros del Paso 3.
 2. Registré un libro nuevo con el formulario.
@@ -130,4 +130,68 @@ guardó bien.
    
 <img width="1179" height="616" alt="image" src="https://github.com/user-attachments/assets/e2126b8b-b97a-45b3-844c-1a380bacf98b" />
 
+### Paso 6: Subir los archivos a GitHub
+
+Subí mis archivos a GitHub uno por uno. Cada uno lleva el comentario
+"Primera subida de archivos".
+
+Primero preparé el repositorio:
+
+```bash
+git init
+```
+
+```bash
+git branch -M main
+```
+
+```bash
+git remote add origin https://github.com/TU_USUARIO/TU_REPOSITORIO.git
+```
+
+```bash
+git status
+```
+
+Después agregué cada archivo con su commit:
+
+```bash
+git add index.php
+git commit -m "Primera subida de archivos - index.php"
+```
+
+```bash
+git add guardar.php
+git commit -m "Primera subida de archivos - guardar.php"
+```
+
+```bash
+git add cambiarEstado.php
+git commit -m "Primera subida de archivos - cambiarEstado.php"
+```
+
+```bash
+git add style.css
+git commit -m "Primera subida de archivos - style.css"
+```
+
+```bash
+git add script.js
+git commit -m "Primera subida de archivos - script.js"
+```
+
+```bash
+git add README.md
+git commit -m "Primera subida de archivos - README.md"
+```
+
+Por último revisé que no quedara nada pendiente y subí todo:
+
+```bash
+git status
+```
+
+```bash
+git push -u origin main
+```
 
