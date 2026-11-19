@@ -67,3 +67,22 @@ CREATE TABLE libros (
     disponible INT DEFAULT 1
 );
 ```
+
+La columna `disponible` vale 1 cuando el libro está disponible y 0 cuando está
+prestado.
+
+## Paso 3: Agregar los dos primeros libros
+
+Para tener datos con los que probar, en la misma pestaña SQL agregué dos libros:
+
+```sql
+INSERT INTO libros (titulo, autor, isbn, disponible) VALUES
+('Cien años de soledad', 'Gabriel García Márquez', '978-0307474728', 1),
+('Don Quijote de la Mancha', 'Miguel de Cervantes', '978-8424937461', 1);
+```
+
+Luego ejecuté esta consulta para comprobar que se guardaron:
+
+```sql
+SELECT * FROM libros;
+```
