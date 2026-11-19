@@ -10,13 +10,11 @@
  * Se ejecuta cuando el usuario presiona el botón "Prestar" de la tabla
  * "Inventario de Libros".
  *
- * @package SistemaControlBiblioteca
  * @author  Liz Yaniri Lopez Martinez
  *
- * @method  POST
- * @param   int $_POST['id']     ID del libro que se va a actualizar
- * @param   int $_POST['actual'] Estado actual (1 = disponible, 0 = prestado)
- * @return  void Redirige a index.php; no devuelve ningún valor
+ * @param int $_POST['id']     ID del libro que se va a actualizar
+ * @param int $_POST['actual'] Estado actual (1 = disponible, 0 = prestado)
+ * @return void Redirige a index.php; no devuelve ningún valor
  */
 
 /**
@@ -30,11 +28,8 @@ if (
 ) {
     /**
      * Datos de conexión a la base de datos MySQL de AwardSpace.
-     *
-     * @var string $host      Servidor de la base de datos
-     * @var string $usuario   Usuario de la base de datos
-     * @var string $password  Contraseña de la base de datos
-     * @var string $baseDatos Nombre de la base de datos
+     * $host es el servidor, $usuario y $password son las credenciales y
+     * $baseDatos es el nombre de la base de datos.
      */
     $host = "pdbXX.awardspace.net"; // Reemplaza por tus datos de AwardSpace
     $usuario = "tu_usuario_bd";
@@ -43,8 +38,7 @@ if (
 
     /**
      * Conexión a la base de datos usando la extensión MySQLi.
-     *
-     * @var mysqli $conexion Objeto de conexión con MySQL
+     * $conexion es el objeto de conexión con MySQL.
      */
     $conexion = new mysqli($host, $usuario, $password, $baseDatos);
 
@@ -58,18 +52,16 @@ if (
     /**
      * Se convierten a número entero los datos recibidos por POST.
      * Esto ayuda a evitar que se envíen valores no válidos.
-     *
-     * @var int $id           ID del libro a actualizar
-     * @var int $estadoActual Estado actual (1 = disponible, 0 = prestado)
+     * $id es el ID del libro y $estadoActual su estado actual
+     * (1 = disponible, 0 = prestado).
      */
     $id = intval($_POST['id']);
     $estadoActual = intval($_POST['actual']);
 
     /**
      * Se calcula el nuevo estado del libro (se invierte el valor actual).
-     *
-     * @var int $nuevoEstado 0 si estaba disponible (ahora prestado),
-     *                       1 si estaba prestado (ahora disponible)
+     * $nuevoEstado vale 0 si estaba disponible (ahora prestado) y 1 si
+     * estaba prestado (ahora disponible).
      */
     // Si estaba disponible (1), ahora será prestado (0).
     // Si estaba prestado (0), será disponible (1).
@@ -78,8 +70,6 @@ if (
     /**
      * Consulta SQL que actualiza la columna "disponible" del libro
      * indicado en la tabla "libros".
-     *
-     * @var string $sql Sentencia UPDATE a ejecutar
      */
     $sql = "UPDATE libros SET disponible = $nuevoEstado WHERE id = $id";
 
