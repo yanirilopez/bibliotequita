@@ -1,7 +1,6 @@
-### Creacion de archivos
-<p>
-Algunos temas que vimos
-</p>
+
+## Algunos temas que vimos
+
 - Git init
 - Git status
 - Git add .
@@ -21,6 +20,7 @@ CSS y JavaScript, y lo publiqué en AwardSpace.
 - AwardSpace para alojar la página y la base de datos
 - phpMyAdmin para crear la tabla
 - Git y GitHub para guardar y subir mis archivos
+  
 
 ## Archivos que creé
 
@@ -34,6 +34,7 @@ Biblioteca/
 ├── style.css
 └── script.js
 ```
+
 | Archivo | Qué hace |
 | --- | --- |
 | index.php | Muestra el formulario y la tabla con los libros |
@@ -41,3 +42,12 @@ Biblioteca/
 | cambiarEstado.php | Cambia el libro entre Disponible y Prestado |
 | style.css | Le da color y orden a la página |
 | script.js | Revisa que no falten datos antes de guardar |
+
+
+### Paso 1: Crear la base de datos
+
+1. Entré a mi cuenta de AwardSpace.
+2. Abrí el apartado **Database Manager**.
+3. ya tenia creada una base de datos, asi que solo agregue una tabla que se llama **libros**
+4. Anoté los cuatro datos que me dieron: servidor, usuario, contraseña y nombre
+   de la base de datos. Los necesité más adelante para conectar mis archivos PHP.
