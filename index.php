@@ -63,7 +63,12 @@ $resultado = $conexion->query("SELECT * FROM libros ORDER BY id DESC");
     <header>
       <h1> Sistema de Control de Biblioteca</h1>
     </header>
+<h1>Sistema de Control de Biblioteca</h1>
 
+<button type="button" class="btn-manual"
+    onclick="window.open('Documentos/Manual_Usuario.pdf', '_blank')">
+    Ver manual de usuario
+</button>
     
     <main class="container">
       <!-- Formulario para agregar libros (envía los datos a guardar.php) -->
