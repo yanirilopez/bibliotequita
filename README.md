@@ -195,3 +195,7 @@ git status
 git push -u origin main
 ```
 
+## Lo que aprendí
+
+Con este proyecto aprendí a conectar una página PHP con una base de datos MySQL,
+a documentar mi código y a usar Git para guardar y subir mi trabajo paso a paso.
