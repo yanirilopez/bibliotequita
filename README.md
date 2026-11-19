@@ -103,3 +103,19 @@ if ($conexion->connect_error) {
   die("Error de conexión: " . $conexion->connect_error);
 }
 ```
+### guardar.php
+
+Este codigo sirve para que reciba lo que escribo en el formulario y lo guarde en la tabla.
+
+### cambiarEstado.php
+
+Este se ejecuta cuando presiono el botón Prestar o Devolver en la tabla y cambia el estado del libro.
+
+### style.css
+
+Con el style le di formato a la página entera para que tenga una buena presentación.
+
+### script.js
+
+Este archivo revisa el formulario antes de enviarlo y avisa cuando el libro se
+guardó bien.
